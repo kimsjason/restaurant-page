@@ -1,87 +1,98 @@
+import Spark from './images/spark.jpg';
+
 const menu = () => {
     const content = document.querySelector('#content');
+    function addItems(menuCategory, menuItems, categoryName) {
+        const header = document.createElement('div');
+        header.classList.add('menu-category-header');
+        header.innerHTML = categoryName;
+        menuCategory.appendChild(header);
+        for (const item in menuItems) {
+            const menuItem = document.createElement('li');
+            menuItem.classList.add('menu-item');
+            const itemName = document.createElement('p');
+            const itemPrice = document.createElement('p');
+
+            itemName.innerHTML = item;
+            itemPrice.innerHTML = menuItems[item];
+            
+            menuItem.appendChild(itemName);
+            menuItem.appendChild(itemPrice);
+            menuCategory.appendChild(menuItem);
+        }
+    }
+
 
     const menu = document.createElement('div');
-    menu.innerHTML = 'menu';
+    menu.classList.add('menu');
+    menu.innerHTML = 'SPARK MENU';
 
     // starters
-    const starters = document.createElement('div');
-    starters.innerHTML = 'starters';
-
-    const arrancini = document.createElement('div');
-    arrancini.innerHTML = 'sicilian arancini';
-    const bruschetta = document.createElement('div');
-    bruschetta.innerHTML = 'bruschetta w/ tomatoes, burrata, & anchovies';
-    const octopus = document.createElement('div');
-    octopus.innerHTML = 'signature octopus in garlic oil';
-    const carpaccio = document.createElement('div');
-    carpaccio.innerHTML = 'grilled wild oyster mushrooms & wagyu carpaccio';
-    
-    starters.appendChild(arrancini);
-    starters.appendChild(bruschetta);
-    starters.appendChild(octopus);
-    starters.appendChild(carpaccio);
+    const starters = document.createElement('ul');
+    starters.classList.add('menu-category');
+    const starterItems = {
+        'sicilian arancini': '15,000 won',
+        'bruschetta w/ tomatoes, burrata, & anchovies': '14,000 won',
+        'signature octopus in garlic oil': '23,000 won',
+        'grilled wild oyster mushrooms & wagyu carpaccio': '22,000 won'
+    };
 
     // sides
-    const sides = document.createElement('div');
-    sides.innerHTML = 'sides';
-
-    const vegetablePlate = document.createElement('div');
-    vegetablePlate.innerHTML = 'vegetable plate';
-    const truffleFries = document.createElement('div');
-    truffleFries.innerHTML = 'truffle fries';
-    
-    sides.appendChild(vegetablePlate);
-    sides.appendChild(truffleFries);
+    const sides = document.createElement('ul');
+    sides.classList.add('menu-category');
+    const sideItems = {
+        'vegetable plate': '14,000 won',
+        'truffle fries': '13,000 won'
+    };
 
     // pasta and risotto
-    const pasta = document.createElement('div');
-    pasta.innerHTML = 'pasta & risotto';
-
-    const seafoodSpaghetti = document.createElement('div');
-    seafoodSpaghetti.innerHTML = 'oil spaghetti w/ fresh seafood medley';
-    const trufflePasta = document.createElement('div');
-    trufflePasta.innerHTML = 'paccheri pasta w/ truffle cream sauce';
-    const bolognese = document.createElement('div');
-    bolognese.innerHTML = 'spaghetti w/ bolognese sauce';
-    const abaloneRisotto = document.createElement('div');
-    abaloneRisotto.innerHTML = 'soft steamed abalone risotto';
-
-    pasta.appendChild(seafoodSpaghetti);
-    pasta.appendChild(trufflePasta);
-    pasta.appendChild(bolognese);
-    pasta.appendChild(abaloneRisotto);
+    const pasta = document.createElement('ul');
+    pasta.classList.add('menu-category');
+    const pastaItems = {
+        'oil spaghetti w/ fresh seafood medley': '34,000 won',
+        'paccheri pasta w/ truffle cream sauce': '33,000 won',
+        'spaghetti w/ bolognese sauce': '32,000 won',
+        'soft steamed abalone risotto': '34,000 won'
+    };
 
     // mains
-    const mains = document.createElement('div');
-    mains.innerHTML = 'mains';
-
-    const porkBelly = document.createElement('div');
-    porkBelly.innerHTML = 'grilled iberico pork belly';
-    const steak = document.createElement('div');
-    steak.innerHTML = 'charcoal grilled beef rib steak';
-
-    mains.appendChild(porkBelly);
-    mains.appendChild(steak);
+    const mains = document.createElement('ul');
+    mains.classList.add('menu-category');
+    const mainItems = {
+        'grilled iberico pork belly': '34,000 won',
+        'charcoal grilled beef rib steak': '39,000 won'
+    };
 
     // desserts
-    const desserts = document.createElement('div');
-    desserts.innerHTML = 'desserts';
+    const desserts = document.createElement('ul');
+    desserts.classList.add('menu-category');
+    const dessertItems = {
+        'panettone w/ vanilla ice cream': '15,000 won',
+        'affogato': '7,000 won'
+    };
 
-    const panettone = document.createElement('div');
-    panettone.innerHTML = 'panettone w/ vanilla ice cream';
-    const affogato = document.createElement('div');
-    affogato.innerHTML = 'affogato';
-
-    desserts.appendChild(panettone);
-    desserts.appendChild(affogato);
+    addItems(starters, starterItems, 'starters');
+    addItems(sides, sideItems, 'sides');
+    addItems(pasta, pastaItems, 'pasta & risotto');
+    addItems(mains, mainItems, 'mains');
+    addItems(desserts, dessertItems, 'desserts');
 
     // menu
+    const spark = document.createElement('img');
+    spark.classList.add('spark');
+    spark.src = Spark;
+
+    menu.appendChild(spark.cloneNode(true))
     menu.appendChild(starters);
+    menu.appendChild(spark.cloneNode(true))
     menu.appendChild(sides);
+    menu.appendChild(spark.cloneNode(true))
     menu.appendChild(pasta);
+    menu.appendChild(spark.cloneNode(true))
     menu.appendChild(mains);
+    menu.appendChild(spark.cloneNode(true))
     menu.appendChild(desserts);
+    menu.appendChild(spark.cloneNode(true))
 
     content.appendChild(menu);
 }
