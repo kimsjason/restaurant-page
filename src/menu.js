@@ -25,7 +25,10 @@ const menu = () => {
 
     const menu = document.createElement('div');
     menu.classList.add('menu');
-    menu.innerHTML = 'SPARK MENU';
+    const menuHeader = document.createElement('h2');
+    menuHeader.classList.add('header');
+    menuHeader.innerHTML = 'SPARK MENU';
+    menu.appendChild(menuHeader);
 
     // starters
     const starters = document.createElement('ul');
