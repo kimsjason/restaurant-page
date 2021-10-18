@@ -31,12 +31,18 @@ body {
     justify-content: center;
 }
 
+.header {
+    padding: 0 25px;
+    text-decoration: 2px underline #e64f2f;
+    text-underline-offset: 12px;
+}
+
 /* navigation */
 .nav-bar {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 10px;
+    padding: 10px;
 }
 
 .logo {
@@ -94,7 +100,7 @@ body {
     height: auto;
     min-height: 400px;
     padding: 0 50px;
-    background: white;
+    background: #ebefe1;
     line-height: 2;
 }
 
@@ -123,8 +129,6 @@ body {
     outline: 2px solid #e64f2f;
     outline-offset: -3rem;
     background: white;
-    font-size: 3rem;
-    font-weight: 700;
     text-align: center;
 }
 
@@ -156,6 +160,22 @@ body {
     height: 25px;
     margin: 25px;
 }
+
+/* contact */
+.contact {
+    display: flex;
+    flex-direction: column;
+    margin: 25px;
+    background: #ebefe1;
+    text-align: center;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+}
+
+
 
 
 /* media queries */
