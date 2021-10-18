@@ -109,6 +109,28 @@ body {
     border-bottom: 2px solid #e64f2f;
 }
 
+.reservation {
+    display: inline-block;
+    width: 200px;
+    height: auto;
+    margin: 25px 0;
+    padding: 10px;
+    border-radius: 10px;
+    background: #e64f2f;
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    font-weight: 700;
+}
+
+.reservation:hover, .reservation:active {
+    background: #d43a1a;
+}
+
+.reservation:active {
+    border: 5px solid #f5b9ac;
+}
+
 .image-container {
     flex: 1;
 }
@@ -185,7 +207,7 @@ body {
         text-align: center;
     }
 
-    .about {
+    .about, .reservation {
         align-self: center;
     }
 }
